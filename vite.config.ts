@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/atask_project/',
+  base: '/atask_project/atask_project/',
   plugins: [react(), tailwindcss(),],
   resolve: {
     alias: {
