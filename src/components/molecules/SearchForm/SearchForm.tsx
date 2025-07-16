@@ -45,11 +45,11 @@ const SearchForm: React.FC<SearchFormProps> = ({
           Search
         </Button>
       </div>
-      {searchValue && showFooterNote && (
-        <div className="w-full">
+      <div className="w-full">
+        {searchValue && showFooterNote && (
           <p className="text-sm text-gray-600 mb-2">{`Showing users for "${searchValue}"`}</p>
-        </div>
-      )}
+        )}
+      </div>
     </form>
   );
 };
