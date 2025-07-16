@@ -6,7 +6,7 @@ import { AppRoutes } from '@routes';
 
 const App: React.FC = () => (
   <Provider store={AppStore}>
-    <BrowserRouter>
+    <BrowserRouter basename="/atask_project">
       <div className="min-h-screen font-sans bg-gray-100 text-gray-900">
         <AppRoutes />
       </div>
