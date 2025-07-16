@@ -12,13 +12,16 @@ const SearchForm: React.FC<SearchFormProps> = ({
   placeholder = 'Enter username',
 }) => {
   const [searchValue, setSearchValue] = useState<string>('');
+  const [showFooterNote, setShowFooterNote] = useState<boolean>(false);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
+    setShowFooterNote(false);
   };
 
   const handleOnSearch = () => {
     onSearch(searchValue);
+    setShowFooterNote(true);
   };
 
   return (
@@ -42,7 +45,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
           Search
         </Button>
       </div>
-      {searchValue && (
+      {searchValue && showFooterNote && (
         <div className="w-full">
           <p className="text-sm text-gray-600 mb-2">{`Showing users for "${searchValue}"`}</p>
         </div>
