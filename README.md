@@ -1,54 +1,116 @@
-# React + TypeScript + Vite
+# Atask Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Project Structure
+```
+my-react-app/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── components/
+│   │   ├── atoms/
+│   │   │   ├── Button/
+│   │   │   │   ├── Button.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── Input/
+│   │   │   │   ├── Input.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── index.ts
+│   │   ├── molecules/
+│   │   │   ├── SearchBox/
+│   │   │   │   ├── SearchBox.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── index.ts
+│   │   ├── organisms/
+│   │   │   ├── Header/
+│   │   │   │   ├── Header.tsx
+│   │   │   │   └── index.ts
+│   │   │   ├── Footer/
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── index.ts
+│   │   ├── templates/
+│   │   │   ├── Layout/
+│   │   │   │   ├── Layout.tsx
+│   │   │   │   └── index.ts
+│   │   │   └── index.ts
+│   │   └── pages/
+│   │       ├── Home/
+│   │       │   ├── Home.tsx
+│   │       │   └── index.ts
+│   │       ├── About/
+│   │       │   ├── About.tsx
+│   │       │   └── index.ts
+│   │       ├── NotFound/
+│   │       │   ├── NotFound.tsx
+│   │       │   └── index.ts
+│   │       └── index.ts
+│   ├── hooks/
+│   │   ├── useLocalStorage.ts
+│   │   └── index.ts
+│   ├── store/
+│   │   ├── slices/
+│   │   │   ├── appSlice.ts
+│   │   │   └── index.ts
+│   │   ├── store.ts
+│   │   └── index.ts
+│   ├── services/
+│   │   ├── api/
+│   │   │   ├── baseApi.ts
+│   │   │   └── index.ts
+│   │   └── index.ts
+│   ├── utils/
+│   │   ├── constants.ts
+│   │   ├── helpers.ts
+│   │   └── index.ts
+│   ├── types/
+│   │   ├── common.ts
+│   │   └── index.ts
+│   ├── styles/
+│   │   ├── globals.css
+│   │   └── index.css
+│   ├── routes/
+│   │   ├── AppRoutes.tsx
+│   │   └── index.ts
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── react-app-env.d.ts
+├── .env
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+In the project directory, you can run:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
