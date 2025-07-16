@@ -1,11 +1,11 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { GithubUser } from '@services';
+import type { GithubSearchResponse } from '@services';
 import { fetchGithubUsers } from '../thunks';
 
 interface AppState {
   loading: boolean;
   error: string | null;
-  githubUsers: GithubUser[];
+  githubUsers: GithubSearchResponse[];
 }
 
 const initialState: AppState = {
@@ -31,7 +31,7 @@ const appSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchGithubUsers.fulfilled, (state, action: PayloadAction<GithubUser[]>) => {
+      .addCase(fetchGithubUsers.fulfilled, (state, action: PayloadAction<GithubSearchResponse[]>) => {
         
         state.loading = false;
         state.githubUsers = action.payload;
